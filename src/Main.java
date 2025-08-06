@@ -6,49 +6,39 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-    public static void main( String[] args )
-    {
+    public static void main( String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
         int opcao;
-        float valor;
+        Scanner scanner = new Scanner(System.in);
         boolean menu = true;
         Cinema cinema = new Cinema();
 
-        while (menu){
-            System.out.println(" =========== Bilheteria ===========");
-            System.out.println(" =  Escolha o filme:              =");
-            System.out.println(" = 1 - Vingadores Ultimato        =");
-            System.out.println(" = 2 - Vingadores Guerra Civil    =");
-            System.out.println(" = 3 - Vingadores Guerra Infinita =");
-            System.out.println(" = 4 - Vingadores Era de Ultron   =");
-            System.out.println(" =========== Bilheteria ===========");
+        while (menu) {
 
+            System.out.println("======Operações=======");
+            System.out.println("= 1 - Cinema         =");
+            System.out.println("= 2 - Empresa        =");
+            System.out.println("= 3 - Relógio        =");
+            System.out.println("= 4 - Sair           =");
+            System.out.println("======================");
             opcao = scanner.nextInt();
 
-            if(opcao>4){
-                System.out.println("Opção inválida");
-                menu = false;
-            }else{
-
-                switch (opcao) {
-                    case 1:
-                        valor = 30;
-                        break;
-                    case 2:
-                        valor = 40;
-                        break;
-                    case 3:
-                        valor = 70;
-                        break;
-                    default:
-                        valor = 100;
-                        break;
-                }
-
-                cinema.ComprarIngresso(opcao,valor);
+            switch (opcao) {
+                case 1:
+                    cinema.EscolheFilme();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    menu = false;
+                    break;
             }
-
         }
     }
+
 }

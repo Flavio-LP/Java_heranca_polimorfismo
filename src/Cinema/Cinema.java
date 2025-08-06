@@ -6,7 +6,52 @@ import java.util.Scanner;
 
 public class Cinema {
 
-    public void ComprarIngresso(int opcao, float valor) {
+    public static void EscolheFilme(){
+
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+        float valor;
+        boolean menu = true;
+
+        while (menu){
+            System.out.println(" =========== Bilheteria ===========");
+            System.out.println(" =  Escolha o filme:              =");
+            System.out.println(" = 1 - Vingadores Ultimato        =");
+            System.out.println(" = 2 - Vingadores Guerra Civil    =");
+            System.out.println(" = 3 - Vingadores Guerra Infinita =");
+            System.out.println(" = 4 - Vingadores Era de Ultron   =");
+            System.out.println(" =========== Bilheteria ===========");
+
+            opcao = scanner.nextInt();
+
+            if(opcao>4){
+                System.out.println("Opção inválida");
+                menu = false;
+            }else{
+
+                switch (opcao) {
+                    case 1:
+                        valor = 30;
+                        break;
+                    case 2:
+                        valor = 40;
+                        break;
+                    case 3:
+                        valor = 70;
+                        break;
+                    default:
+                        valor = 100;
+                        break;
+                }
+
+                ComprarIngresso(opcao,valor);
+            }
+
+        }
+    }
+
+
+    public static void ComprarIngresso(int opcao, float valor) {
 
         Scanner scanner = new Scanner(System.in);
         int tipoIngresso;
